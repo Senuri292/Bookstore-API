@@ -1,0 +1,2215 @@
+{
+	"info": {
+		"_postman_id": "e5ac242a-813a-4e54-ba0e-fdaa61db4116",
+		"name": "BookstoreAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40279931"
+	},
+	"item": [
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "getAllBooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBookById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/books/103",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"books",
+								"103"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBookById invalid ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/books/300",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"books",
+								"300"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBookById invalid ID type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/books/q",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"books",
+								"q"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBook",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\": 102,\r\n    \"title\": \"The Hobbit\",\r\n    \"authorId\": 201,\r\n    \"isbn\": \"9780261103344\",\r\n    \"publicationYear\": 2013,\r\n    \"price\": 14.99,\r\n    \"stock\": 12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/books/102",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"books",
+								"102"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBook invalid ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\": 102,\r\n    \"title\": \"The Hobbit\",\r\n    \"authorId\": 201,\r\n    \"isbn\": \"9780261103344\",\r\n    \"publicationYear\": 2013,\r\n    \"price\": -14.99,\r\n    \"stock\": 12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/books/400",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"books",
+								"400"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBook negative price",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\": 102,\r\n    \"title\": \"The Hobbit\",\r\n    \"authorId\": 201,\r\n    \"isbn\": \"9780261103344\",\r\n    \"publicationYear\": 2013,\r\n    \"price\": -14.99,\r\n    \"stock\": 12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/books/102",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"books",
+								"102"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBook negative stock",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\": 102,\r\n    \"title\": \"The Hobbit\",\r\n    \"authorId\": 201,\r\n    \"isbn\": \"9780261103344\",\r\n    \"publicationYear\": 2013,\r\n    \"price\": 14.99,\r\n    \"stock\": -12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/books/102",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"books",
+								"102"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBook invalid author ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\": 102,\r\n    \"title\": \"The Hobbit\",\r\n    \"authorId\": 301,\r\n    \"isbn\": \"9780261103344\",\r\n    \"publicationYear\": 2013,\r\n    \"price\": 14.99,\r\n    \"stock\": 12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/books/102",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"books",
+								"102"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBook publication year in the future",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\": 102,\r\n    \"title\": \"The Hobbit\",\r\n    \"authorId\": 201,\r\n    \"isbn\": \"9780261103344\",\r\n    \"publicationYear\": 3013,\r\n    \"price\": 14.99,\r\n    \"stock\": 12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/books/102",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"books",
+								"102"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBook",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/books/101",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"books",
+								"101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBook invalid ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/books/200",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"books",
+								"200"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBook nonexistent ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/books/110",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"books",
+								"110"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createBook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\": 106,\r\n    \"title\": \"Harry Potter and the Prisoner of Azkaban\",\r\n    \"authorId\": 202,\r\n    \"isbn\": \"9780439708180\",\r\n    \"publicationYear\": 2016,\r\n    \"price\": 13.99,\r\n    \"stock\": 14\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createBook invalid author ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"bookId\": 107,\r\n        \"title\": \"Harry Potter and the Prisoner of Azkaban\",\r\n        \"authorId\": 300,\r\n        \"isbn\": \"9780439708180\",\r\n        \"publicationYear\": 2000,\r\n        \"price\": 13.99,\r\n        \"stock\": 14\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createBook negative price",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"bookId\": 108,\r\n        \"title\": \"Harry Potter and the Prisoner of Azkaban\",\r\n        \"authorId\": 204,\r\n        \"isbn\": \"9780439708180\",\r\n        \"publicationYear\": 2000,\r\n        \"price\": -13.99,\r\n        \"stock\": 14\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createBook negative stock",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"bookId\": 109,\r\n        \"title\": \"Harry Potter and the Prisoner of Azkaban\",\r\n        \"authorId\": 204,\r\n        \"isbn\": \"9780439708180\",\r\n        \"publicationYear\": 2000,\r\n        \"price\": 13.99,\r\n        \"stock\": -14\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createBook publication year in the future",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"bookId\": 107,\r\n        \"title\": \"Harry Potter and the Prisoner of Azkaban\",\r\n        \"authorId\": 204,\r\n        \"isbn\": \"9780439708180\",\r\n        \"publicationYear\": 3000,\r\n        \"price\": 13.99,\r\n        \"stock\": 14\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"books"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Author",
+			"item": [
+				{
+					"name": "getAllAuthors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/authors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAuthorById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/authors/207",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"authors",
+								"207"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAuthorById invalid ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/authors/300",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"authors",
+								"300"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAuthorById nonexistent ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/authors/209",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"authors",
+								"209"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAuthorById invalid ID type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/authors/q",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"authors",
+								"q"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAuthor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"authorId\": 205,\r\n    \"firstName\": \"Sulo\",\r\n    \"lastName\": \"Swarnamali\",\r\n    \"biography\": \"Known for the Swarnamali chronicals.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/authors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAuthor invalid first name",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"authorId\": 205,\r\n    \"firstName\": 123,\r\n    \"lastName\": \"Swarnamali\",\r\n    \"biography\": \"Known for the Swarnamali chronicals.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/authors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAuthor invalid last name",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"authorId\": 205,\r\n    \"firstName\": \"Sulo\",\r\n    \"lastName\": \"123\",\r\n    \"biography\": \"Known for the Swarnamali chronicals.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/authors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAuthor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"authorId\": 203,\r\n    \"firstName\": \"Sulo\",\r\n    \"lastName\": \"Swarnamali\",\r\n    \"biography\": \"xyz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/authors/203",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"authors",
+								"203"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAuthor invalid ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"authorId\": 203,\r\n    \"firstName\": \"Sulo\",\r\n    \"lastName\": \"Swarnamali\",\r\n    \"biography\": \"xyz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/authors/300",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"authors",
+								"300"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAuthor invalid last name",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"authorId\": 203,\r\n    \"firstName\": \"Sulo\",\r\n    \"lastName\": \"234\",\r\n    \"biography\": \"xyz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/authors/203",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"authors",
+								"203"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAuthor invalid first name",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"authorId\": 203,\r\n    \"firstName\": \"124\",\r\n    \"lastName\": \"Swarnamali\",\r\n    \"biography\": \"xyz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/authors/203",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"authors",
+								"203"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAuthor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/authors/205",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"authors",
+								"205"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAuthor invalid ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/authors/500",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"authors",
+								"500"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAuthor nonexistent ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/authors/210",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"authors",
+								"210"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAuthorsBooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/authors/201/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"authors",
+								"201",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAuthorsBooks invalid ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/authors/209/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"authors",
+								"209",
+								"books"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "createCustomer invalid email format",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 306,\r\n    \"firstName\": \"x\",\r\n    \"lastName\": \"y\",\r\n    \"email\": \"xygmail.com\",\r\n    \"password\": \"emilyPass99\",\r\n    \"cart\": {},\r\n    \"orders\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCustomer invalid first name",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 306,\r\n    \"firstName\": \"123\",\r\n    \"lastName\": \"y\",\r\n    \"email\": \"xy@gmail.com\",\r\n    \"password\": \"emilyPass99\",\r\n    \"cart\": {},\r\n    \"orders\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCustomer invalid last name Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 306,\r\n    \"firstName\": \"x\",\r\n    \"lastName\": \"345\",\r\n    \"email\": \"xy@gmail.com\",\r\n    \"password\": \"emilyPass99\",\r\n    \"cart\": {},\r\n    \"orders\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 306,\r\n    \"firstName\": \"x\",\r\n    \"lastName\": \"y\",\r\n    \"email\": \"xy@gmail.com\",\r\n    \"password\": \"emilyPass99\",\r\n    \"cart\": {},\r\n    \"orders\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCustomers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomerById invalid ID type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/Q",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"Q"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomerById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/Q",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"Q"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomerById invalid ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/400",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"400"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomerById nonexistent ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/310",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"310"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomer invalid first name",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 302,\r\n    \"firstName\": \"123\",\r\n    \"lastName\": \"Davis\",\r\n    \"email\": \"emily.davis@gmail.com\",\r\n    \"password\": \"emilyPass99\",\r\n    \"cart\": {},\r\n    \"orders\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/302",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"302"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomer invalid last name",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 302,\r\n    \"firstName\": \"x\",\r\n    \"lastName\": \"203\",\r\n    \"email\": \"emily.davis@gmail.com\",\r\n    \"password\": \"emilyPass99\",\r\n    \"cart\": {},\r\n    \"orders\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/302",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"302"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomer invalid email",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 302,\r\n    \"firstName\": \"x\",\r\n    \"lastName\": \"Davis\",\r\n    \"email\": \"emily.davisgmail.com\",\r\n    \"password\": \"emilyPass99\",\r\n    \"cart\": {},\r\n    \"orders\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/302",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"302"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 302,\r\n    \"firstName\": \"X\",\r\n    \"lastName\": \"Davis\",\r\n    \"email\": \"emily.davis@gmail.com\",\r\n    \"password\": \"emilyPass99\",\r\n    \"cart\": {},\r\n    \"orders\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/302",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"302"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomer Invalid ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 302,\r\n    \"firstName\": \"123\",\r\n    \"lastName\": \"Davis\",\r\n    \"email\": \"emily.davis@gmail.com\",\r\n    \"password\": \"emilyPass99\",\r\n    \"cart\": {},\r\n    \"orders\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/400",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"400"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/303",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"303"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomer invalid ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/500",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"500"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomer nonexistent ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/310",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"310"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "addToCart negative quantity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\": 101,\r\n    \"quantity\": -15\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/305/cart/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"305",
+								"cart",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addToCart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\": 102,\r\n    \"quantity\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/301/cart/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"301",
+								"cart",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addToCart invalid book ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\": 300,\r\n    \"quantity\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/305/cart/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"305",
+								"cart",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addToCart invalid customer ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\": 101,\r\n    \"quantity\": 15\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/400/cart/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"400",
+								"cart",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addToCart nonexistent customer ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\": 101,\r\n    \"quantity\": 15\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/310/cart/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"310",
+								"cart",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDetailedCart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/301/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"301",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDetailedCart invalid ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/400/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"400",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDetailedCart invalid ID type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/q/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"q",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDetailedCart nonexistent ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/310/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"310",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCartItem negative quantity",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\": -3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/305/cart/items/103",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"305",
+								"cart",
+								"items",
+								"103"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCartItem",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/301/cart/items/102",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"301",
+								"cart",
+								"items",
+								"102"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCartItem invalid book ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/305/cart/items/300",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"305",
+								"cart",
+								"items",
+								"300"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCartItem invalid customer ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/500/cart/items/102",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"500",
+								"cart",
+								"items",
+								"102"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCartItem nonexistent customer ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/310/cart/items/300",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"310",
+								"cart",
+								"items",
+								"300"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCartItem",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/301/cart/items/103",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"301",
+								"cart",
+								"items",
+								"103"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCartItem invalid book ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/301/cart/items/500",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"301",
+								"cart",
+								"items",
+								"500"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCartItem nonexistent customer ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/310/cart/items/101",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"310",
+								"cart",
+								"items",
+								"101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCartItem invalid customer ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/200/cart/items/101",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"200",
+								"cart",
+								"items",
+								"101"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "placeOrder Book Out of stock",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/305/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"305",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placeOrder cart is empty",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/301/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"301",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placeOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/301/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"301",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placeOrder invalid customer ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/500/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"500",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placeOrder nonexistent customer ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/310/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"310",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllOrders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/301/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"301",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderById invalid order ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/301/orders/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"301",
+								"orders",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderById invalid customer ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/500/orders/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"500",
+								"orders",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderById nonexistent customer ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/311/orders/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"311",
+								"orders",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Bookstore/rest/customers/301/orders/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Bookstore",
+								"rest",
+								"customers",
+								"301",
+								"orders",
+								"0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
